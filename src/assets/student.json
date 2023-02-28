@@ -1,0 +1,9 @@
+{
+  "studentID":"345678901",
+  "name":"John Doe",
+  "picture":"http://localhost:3000/beard-1845166_960_720.jpg",
+  "department":"Computer Science",
+  "status":"Full-Time Undergraduate",
+  "valid_until":"31-Dec-2023",
+  "barcode":"https://barcodeapi.org/api/auto/345678901"
+}

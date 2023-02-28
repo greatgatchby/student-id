@@ -1,22 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import StudentCard from "./components/student-card";
+import React, {useState} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Button from "./components/button";
+import student from './assets/student.json'
 function App() {
+  const [state, setState] = useState('front')
+  const handleFlip = () => {
+    if (state === 'front') {
+      document.getElementById('student-card').classList.add('rotate')
+      setState('back')
+    } else {
+      document.getElementById('student-card').classList.remove('rotate')
+      setState('front')
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <StudentCard onClick={handleFlip} student={student} />
+        <Button state={state} onClick={handleFlip}/>
       </header>
     </div>
   );
